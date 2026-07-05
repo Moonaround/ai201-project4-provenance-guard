@@ -298,6 +298,11 @@ def analytics():
     except Exception as e:
         return jsonify({"error": "Analytics compiling safe bypass executed", "details": str(e)}), 500
 
+@app.route("/", methods=["GET"])
+def home():
+    """Provides a clear landing indicator confirming the backend server is active."""
+    return "🚀 Provenance Guard Core Backend Framework is Active and Online."
+
 @app.route("/log", methods=["GET"])
 def log():
     try:
